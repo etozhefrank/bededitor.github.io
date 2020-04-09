@@ -5,7 +5,7 @@ const DRAG_NOTICE = document.getElementById('js-drag-notice');
 
 var theModel;
 
-const MODEL_PATH = "models/blenderbed.glb";
+const MODEL_PATH = "https://cdn.glitch.com/44ddfed7-a4f4-46fa-943d-71f80528879b%2Fblenderbed.glb?v=1586352391979";
 
 var activeOption = 'main';
 var loaded = false;
