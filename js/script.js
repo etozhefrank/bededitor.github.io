@@ -1,3 +1,6 @@
+import * as THREE from 'js/three.module.js';
+import { ARButton } from 'js/ARButton.js'
+
 const LOADER = document.getElementById('js-loader');
 
 const TRAY = document.getElementById('js-tray-slide');
@@ -9,6 +12,9 @@ const MODEL_PATH = "models/blenderbed.glb";
 
 var activeOption = 'main';
 var loaded = false;
+var container;
+var hitTestSource = null;
+var hitTestSourceRequested = false;
 
 const colors = [
 {
@@ -174,13 +180,13 @@ scene.fog = new THREE.Fog(BACKGROUND_COLOR, 20, 100);
 const canvas = document.querySelector('#c');
 
 // Init the renderer
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true,  alpha: true });
 
 renderer.shadowMap.enabled = true;
 renderer.setPixelRatio(window.devicePixelRatio);
-
+renderer.xr.enabled = true;
 var cameraFar = 5;
-
+document.body.appendChild( ARButton.createButton( renderer, { requiredFeatures: [ 'hit-test' ] } ) );
 document.body.appendChild(renderer.domElement);
 
 // Add a camerra
@@ -278,6 +284,29 @@ controls.enablePan = false;
 controls.dampingFactor = 0.1;
 controls.autoRotate = false; // Toggle this if you'd like the chair to automatically rotate
 controls.autoRotateSpeed = 0.2; // 30
+
+//AR
+function onSelect() {
+
+					if ( reticle.visible ) {
+
+						var material = new THREE.MeshPhongMaterial( { color: 0xffffff * Math.random() } );
+						var mesh = new THREE.Mesh( theModel, material );
+						mesh.position.setFromMatrixPosition( reticle.matrix );
+						mesh.scale.y = Math.random() * 2 + 1;
+						scene.add( mesh );
+
+controller = renderer.xr.getController( 0 );
+				controller.addEventListener( 'select', onSelect );
+				scene.add( controller );
+
+				reticle = new THREE.Mesh(
+					new THREE.RingBufferGeometry( 0.15, 0.2, 32 ).rotateX( - Math.PI / 2 ),
+					new THREE.MeshBasicMaterial()
+				);
+				reticle.matrixAutoUpdate = false;
+				reticle.visible = false;
+				scene.add( reticle );
 
 function animate() {
 
@@ -428,6 +457,62 @@ function slide(wrapper, items) {
   items.addEventListener('touchstart', dragStart);
   items.addEventListener('touchend', dragEnd);
   items.addEventListener('touchmove', dragAction);
+
+  //ARrender
+  function render( timestamp, frame ) {
+
+				if ( frame ) {
+
+					var referenceSpace = renderer.xr.getReferenceSpace();
+					var session = renderer.xr.getSession();
+
+					if ( hitTestSourceRequested === false ) {
+
+						session.requestReferenceSpace( 'viewer' ).then( function ( referenceSpace ) {
+
+							session.requestHitTestSource( { space: referenceSpace } ).then( function ( source ) {
+
+								hitTestSource = source;
+
+							} );
+
+						} );
+
+						session.addEventListener( 'end', function () {
+
+							hitTestSourceRequested = false;
+							hitTestSource = null;
+
+						} );
+
+						hitTestSourceRequested = true;
+
+					}
+
+					if ( hitTestSource ) {
+
+						var hitTestResults = frame.getHitTestResults( hitTestSource );
+
+						if ( hitTestResults.length ) {
+
+							var hit = hitTestResults[ 0 ];
+
+							reticle.visible = true;
+							reticle.matrix.fromArray( hit.getPose( referenceSpace ).transform.matrix );
+
+						} else {
+
+							reticle.visible = false;
+
+						}
+
+					}
+
+				}
+
+				renderer.render( scene, camera );
+
+			}
 
 
   function dragStart(e) {
