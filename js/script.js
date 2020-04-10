@@ -180,7 +180,6 @@ renderer.shadowMap.enabled = true;
 renderer.setPixelRatio(window.devicePixelRatio);
 
 var cameraFar = 5;
-document.body.appendChild( ARButton.createButton( renderer, { requiredFeatures: [ 'hit-test' ] } ) );
 document.body.appendChild(renderer.domElement);
 
 // Add a camerra
