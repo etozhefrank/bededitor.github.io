@@ -9,9 +9,6 @@ const MODEL_PATH = "models/blenderbed.glb";
 
 var activeOption = 'main';
 var loaded = false;
-var container;
-var hitTestSource = null;
-var hitTestSourceRequested = false;
 
 const colors = [
 {
@@ -177,13 +174,13 @@ scene.fog = new THREE.Fog(BACKGROUND_COLOR, 20, 100);
 const canvas = document.querySelector('#c');
 
 // Init the renderer
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true,  alpha: true });
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
 
 renderer.shadowMap.enabled = true;
 renderer.setPixelRatio(window.devicePixelRatio);
-renderer.xr.enabled = true;
+
 var cameraFar = 5;
-document.body.appendChild( ARButton.createButton( renderer, { requiredFeatures: [ 'hit-test' ] } ) );
+
 document.body.appendChild(renderer.domElement);
 
 // Add a camerra
@@ -281,7 +278,6 @@ controls.enablePan = false;
 controls.dampingFactor = 0.1;
 controls.autoRotate = false; // Toggle this if you'd like the chair to automatically rotate
 controls.autoRotateSpeed = 0.2; // 30
-
 
 function animate() {
 
@@ -433,7 +429,6 @@ function slide(wrapper, items) {
   items.addEventListener('touchend', dragEnd);
   items.addEventListener('touchmove', dragAction);
 
- 
 
   function dragStart(e) {
     e = e || window.event;
