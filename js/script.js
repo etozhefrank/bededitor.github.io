@@ -238,6 +238,25 @@ const links = document.querySelectorAll(".tray__swatch");
 for (const link of links) {
   link.addEventListener('click', selectLink);
 }
+//BUILD URL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+function buildURL(colors) {
+  for (let [i, link] of colors.entries()) {
+    let swatch = document.createElement('button');
+    link.classList.add('tray__swatch');
+
+    if (color.texture)
+    {
+      swatch.style.backgroundImage = "url(" + color.texture + ")";
+    } else
+    {
+      swatch.style.background = "#" + color.color;
+    }
+
+    swatch.setAttribute('data-key', i);
+    TRAY.append(swatch);
+  }
+}
+
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 function selectLink(e) {
   let link = colors[parseInt(e.target.dataset.key)];
