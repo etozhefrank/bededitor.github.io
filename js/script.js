@@ -9,7 +9,6 @@ const MODEL_PATH = "models/blenderbed.glb";
 
 var activeOption = 'main';
 var loaded = false;
-var l;
 const colors = [
 {
     texture: 'resources/brown.png',
