@@ -192,6 +192,21 @@ function resizeRendererToDisplaySize(renderer) {
   }
   return needResize;
 }
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+function button(colors) {
+    for (let [i, color] of colors.entries()) {
+        let link = document.createElement('button');
+        link.classList.add('tray__swatch');
+        
+        if (color.link) {
+            link.href = "url(" + color.link + ")";
+        link.setAttribute('data-key', i);
+    TRAY.append(link);
+  }
+}
+        
+    
+
 
 // Function - Build Colors
 
