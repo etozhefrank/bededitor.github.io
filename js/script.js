@@ -198,8 +198,9 @@ function resizeRendererToDisplaySize(renderer) {
 function buildColors(colors) {
   for (let [i, color] of colors.entries()) {
     let swatch = document.createElement('div');
-    let swatch = document.createElement('button');
+    let link = document.createElement('button');
     swatch.classList.add('tray__swatch');
+    link.classList.add('tray__swatch');
     
     if (color.texture)
     {
