@@ -42,7 +42,7 @@ const colors = [
 
 let out ='';
 for (let key in colors){
-    out += color[l];
+    out += i[key];
 }
 document.querySelector('.out').innerHTML = out;
 
