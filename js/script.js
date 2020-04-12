@@ -236,7 +236,7 @@ const swatches = document.querySelectorAll(".tray__swatch");
 const links = document.querySelectorAll(".tray__swatch");
 
 for (const link of links);
-  swatch.addEventListener('click', selectLink);
+  link.addEventListener('click', selectLink);
 }
 
 
