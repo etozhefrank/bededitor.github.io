@@ -13,7 +13,7 @@ const colors = [
 {
     texture: 'resources/brown.png',
     size: [1,1,1],
-    shininess: 61,
+    shininess: 60,
  
 },
 {
