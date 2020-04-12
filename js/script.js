@@ -217,7 +217,7 @@ buildColors(colors);
 
 // Select Option
 function link(colors) {
-    for (let [i, link] of colors.entries {
+    for (let [i, link] of colors.entries()) {
          let swatch = document.createElement('div');
          swatch.classList.add('tray__swatch');
          swatch = "url";
