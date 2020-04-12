@@ -58,6 +58,7 @@ renderer.shadowMap.enabled = true;
 renderer.setPixelRatio(window.devicePixelRatio);
 
 var cameraFar = 5;
+
 document.body.appendChild(renderer.domElement);
 
 // Add a camerra
@@ -69,7 +70,8 @@ camera.position.x = 0;
 const INITIAL_MTL = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
 
 const INITIAL_MAP = [
-{ childID: "main", mtl: INITIAL_MTL }];
+{ childID: "main", mtl: INITIAL_MTL },
+{ childID: "matras", mtl: INITIAL_MTL }];
 
 
 // Init the object loader
@@ -190,23 +192,14 @@ function resizeRendererToDisplaySize(renderer) {
   }
   return needResize;
 }
-//link
 
-    
 // Function - Build Colors
-function links(colors) {
-    for (let [i, color] of colors.entries()) {
-        let link = document.createElement('button');
-        link.classList.add('tray__swatch');
-    }
-     link.setAttribute('data-key', i);
-    TRAY.append(link);
-}
+
 function buildColors(colors) {
   for (let [i, color] of colors.entries()) {
     let swatch = document.createElement('div');
     swatch.classList.add('tray__swatch');
-    
+
     if (color.texture)
     {
       swatch.style.backgroundImage = "url(" + color.texture + ")";
@@ -226,9 +219,8 @@ buildColors(colors);
 const options = document.querySelectorAll(".option");
 
 for (const option of options) {
-  option.addEventListener('click', selectOption );
+  option.addEventListener('click', selectOption);
 }
-//link!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 function selectOption(e) {
   let option = e.target;
@@ -243,15 +235,15 @@ function selectOption(e) {
 const swatches = document.querySelectorAll(".tray__swatch");
 
 for (const swatch of swatches) {
-  swatch.addEventListener('click', selectSwatch, button);
+  swatch.addEventListener('click', selectSwatch);
 }
-
 
 function selectSwatch(e) {
   let color = colors[parseInt(e.target.dataset.key)];
   let new_mtl;
+
   if (color.texture) {
-    
+
     let txt = new THREE.TextureLoader().load(color.texture);
 
     txt.repeat.set(color.size[0], color.size[1], color.size[2]);
