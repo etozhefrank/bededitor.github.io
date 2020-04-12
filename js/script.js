@@ -238,7 +238,7 @@ for (const swatch of swatches) {
   swatch.addEventListener('click', selectSwatch);
 }
     
-}
+
 function selectSwatch(e) {
   let color = colors[parseInt(e.target.dataset.key)];
   let new_mtl;
