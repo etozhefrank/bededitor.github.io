@@ -68,11 +68,10 @@ camera.position.x = 0;
 
 // Initial material
 const INITIAL_MTL = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
-
+//!!!!!!!!!!!!!!!!!!!1111111111111111111111111111111111111111111111111111111111111111111111111111111111111
 const INITIAL_MAP = [
 { childID: "main", mtl: INITIAL_MTL },
 { childID: "matras", mtl: INITIAL_MTL }];
-
 
 // Init the object loader
 var loader = new THREE.GLTFLoader();
@@ -198,7 +197,7 @@ function resizeRendererToDisplaySize(renderer) {
 function buildColors(colors) {
   for (let [i, color] of colors.entries()) {
     let swatch = document.createElement('div');
-    let swatch = document.createElement('button')
+    let swatch = document.createElement('button');
     swatch.classList.add('tray__swatch');
 
     if (color.texture)
