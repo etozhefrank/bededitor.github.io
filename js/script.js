@@ -40,7 +40,7 @@ const colors = [
     link: '',
 }];
 
-console.log(colors['link']);
+console.log(colors.link);
 
 const BACKGROUND_COLOR = 0xf1f1f1;
 // Init the scene
