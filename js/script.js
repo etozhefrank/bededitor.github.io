@@ -67,8 +67,7 @@ camera.position.x = 0;
 const INITIAL_MTL = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
 
 const INITIAL_MAP = [
-{ childID: "main", mtl: INITIAL_MTL },
-{ childID: "matras", mtl: INITIAL_MTL }];
+{ childID: "main", mtl: INITIAL_MTL }];
 
 
 // Init the object loader
