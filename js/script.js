@@ -207,7 +207,7 @@ function buildColors(colors) {
     {
       swatch.style.background = "#" + color.color;
     }
-
+    
     swatch.setAttribute('data-key', i);
     TRAY.append(swatch);
   }
@@ -241,7 +241,7 @@ for (const swatch of swatches) {
 function selectSwatch(e) {
   let color = colors[parseInt(e.target.dataset.key)];
   let new_mtl;
-
+  let link = colors[parseURL(url)];
   if (color.texture) {
 
     let txt = new THREE.TextureLoader().load(color.texture);
