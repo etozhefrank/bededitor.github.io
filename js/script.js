@@ -194,13 +194,18 @@ function resizeRendererToDisplaySize(renderer) {
 
     
 // Function - Build Colors
-
+function links(colors) {
+    for (let [i, color] of colors.entries()) {
+        let link = document.createElement('button');
+        link.classList.add('tray__swatch');
+    }
+     link.setAttribute('data-key', i);
+    TRAY.append(link);
+}
 function buildColors(colors) {
   for (let [i, color] of colors.entries()) {
     let swatch = document.createElement('div');
-    let link = document.createElement('button');
     swatch.classList.add('tray__swatch');
-    link.classList.add('tray__swatch');
     
     if (color.texture)
     {
