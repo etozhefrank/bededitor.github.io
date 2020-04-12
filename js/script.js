@@ -199,7 +199,7 @@ function button(colors) {
         link.classList.add('tray__swatch');
         
         if (color.link) {
-            link.window.location = "url";
+            link.open= "url";
         }
         link.setAttribute('data-key', i);
     TRAY.append(link);
