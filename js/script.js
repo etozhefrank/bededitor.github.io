@@ -18,7 +18,7 @@ const colors = [
 {
     texture: 'resources/lightbrown.png',
     size: [1,1,1],
-    shininess: 10,
+    shininess: 11,
     link: '',
 },
 {
