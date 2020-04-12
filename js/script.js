@@ -238,7 +238,10 @@ const links = document.querySelectorAll(".tray__swatch");
 for (const link of links) {
   link.addEventListener('click', selectLink);
 }
-
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+function selectLink(e) {
+  let link = colors[parseInt(e.target.dataset.key)];
+}
 
 for (const swatch of swatches) {
   swatch.addEventListener('click', selectSwatch);
@@ -246,7 +249,6 @@ for (const swatch of swatches) {
 
 function selectSwatch(e) {
   let color = colors[parseInt(e.target.dataset.key)];
-  let link = colors[parseInt(e.target.dataset.key)];
   let new_mtl;
 
   if (color.texture) {
