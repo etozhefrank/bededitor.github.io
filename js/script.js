@@ -5,7 +5,7 @@ const DRAG_NOTICE = document.getElementById('js-drag-notice');
 
 var theModel;
 
-const MODEL_PATH = "models/colorbed.glb";
+const MODEL_PATH = "models/colorBed.glb";
 
 var activeOption = 'main';
 var loaded = false;
