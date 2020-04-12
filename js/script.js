@@ -40,11 +40,12 @@ const colors = [
     
 }];
 
-
-
-function myfun(){
-    window.location(l1);
+let out ='';
+for (let key in colors){
+    out += color[l];
 }
+document.querySelector('.out').innerHTML = out;
+
 
 const BACKGROUND_COLOR = 0xf1f1f1;
 // Init the scene
