@@ -44,7 +44,7 @@ const colors = [
 
 
 function myfun(){
-    window.location = l;
+    window.location(1);
 }
 
 const BACKGROUND_COLOR = 0xf1f1f1;
