@@ -40,7 +40,6 @@ const colors = [
     link: '',
 }];
 
-console.log(colors.link);
 
 const BACKGROUND_COLOR = 0xf1f1f1;
 // Init the scene
@@ -195,7 +194,7 @@ function resizeRendererToDisplaySize(renderer) {
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 function button(colors) {
     for (let [i, color] of colors.entries()) {
-        let link = document.createElement('button');
+        let link = document.querySelectorAll('link');
         link.open= "url";
        
         link.setAttribute('data-key', i);
