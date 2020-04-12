@@ -6,7 +6,7 @@ const DRAG_NOTICE = document.getElementById('js-drag-notice');
 var theModel;
 
 const MODEL_PATH = "models/blenderbed.glb";
-
+var l;
 var activeOption = 'main';
 var loaded = false;
 const colors = [
@@ -14,7 +14,7 @@ const colors = [
     texture: 'resources/brown.png',
     size: [1,1,1],
     shininess: 60,
- 
+    l: 'https://elderly-neon.glitch.me/'
 },
 {
     texture: 'resources/lightbrown.png',
@@ -43,6 +43,9 @@ const colors = [
 
 
 
+function myfun(){
+    window.location = l;
+}
 
 const BACKGROUND_COLOR = 0xf1f1f1;
 // Init the scene
