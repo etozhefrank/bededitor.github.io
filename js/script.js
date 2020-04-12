@@ -24,7 +24,7 @@ const colors = [
 {
     texture: 'resources/pink.png',
     size: [1,1,1],
-    shininess: 01,
+    shininess: 0,
     link: '',
 },
 {
