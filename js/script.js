@@ -224,7 +224,6 @@ function link(colors) {
     swatch.setAttribute('data-key', i);
     TRAY.append(swatch);
 }
-}
 link(colors);
 const options = document.querySelectorAll(".option");
 
