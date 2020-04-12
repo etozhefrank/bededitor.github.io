@@ -205,7 +205,7 @@ function button(colors) {
     TRAY.append(link);
   }
 }
-        
+button(colors);        
     
 
 
