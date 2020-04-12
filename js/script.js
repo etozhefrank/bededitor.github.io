@@ -5,7 +5,7 @@ const DRAG_NOTICE = document.getElementById('js-drag-notice');
 
 var theModel;
 
-const MODEL_PATH = "models/lastbed.glb";
+const MODEL_PATH = "models/blenderbed.glb";
 
 var activeOption = 'main';
 var loaded = false;
