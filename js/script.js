@@ -13,38 +13,33 @@ const colors = [
     texture: 'resources/brown.png',
     size: [1,1,1],
     shininess: 61,
-    l: 'https://elderly-neon.glitch.me/'
+    link: 'https://elderly-neon.glitch.me/',
 },
 {
     texture: 'resources/lightbrown.png',
     size: [1,1,1],
     shininess: 11,
-    
+    link: '',
 },
 {
     texture: 'resources/pink.png',
     size: [1,1,1],
     shininess: 0,
-    
+    link: '',
 },
 {
     texture: 'resources/red.png',
     size: [1,1,1],
     shininess: 11,
-    
+    link: '',
 },
 {
     texture: 'resources/white.png',
     size: [1,1,1],
     shininess: 11,
-    
+    link: '',
 }];
 
-let out ='';
-for (let key in colors){
-    out += l[key];
-}
-document.querySelector('.out').innerHTML = out;
 
 
 const BACKGROUND_COLOR = 0xf1f1f1;
@@ -195,7 +190,9 @@ function resizeRendererToDisplaySize(renderer) {
   }
   return needResize;
 }
+//link
 
+    
 // Function - Build Colors
 
 function buildColors(colors) {
@@ -244,9 +241,9 @@ for (const swatch of swatches) {
 function selectSwatch(e) {
   let color = colors[parseInt(e.target.dataset.key)];
   let new_mtl;
-
+  let link;
   if (color.texture) {
-
+    
     let txt = new THREE.TextureLoader().load(color.texture);
 
     txt.repeat.set(color.size[0], color.size[1], color.size[2]);
