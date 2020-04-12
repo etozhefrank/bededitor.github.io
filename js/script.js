@@ -14,27 +14,27 @@ const colors = [
 {
     texture: 'resources/brown.png',
     size: [1,1,1],
-    shininess: 61
+    shininess: 62
 },
 {
     texture: 'resources/lightbrown.png',
     size: [1,1,1],
-    shininess: 10
+    shininess: 11
 },
 {
     texture: 'resources/pink.png',
     size: [1,1,1],
-    shininess: 0
+    shininess: 01
 },
 {
     texture: 'resources/red.png',
     size: [1,1,1],
-    shininess: 10
+    shininess: 11
 },
 {
     texture: 'resources/white.png',
     size: [1,1,1],
-    shininess: 10
+    shininess: 11
 }];
 
 
