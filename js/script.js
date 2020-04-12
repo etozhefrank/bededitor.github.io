@@ -68,10 +68,11 @@ camera.position.x = 0;
 
 // Initial material
 const INITIAL_MTL = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
-//!!!!!!!!!!!!!!!!!!!1111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+
 const INITIAL_MAP = [
 { childID: "main", mtl: INITIAL_MTL },
 { childID: "matras", mtl: INITIAL_MTL }];
+
 
 // Init the object loader
 var loader = new THREE.GLTFLoader();
@@ -232,27 +233,6 @@ function selectOption(e) {
 
 // Swatches
 const swatches = document.querySelectorAll(".tray__swatch");
-
-for (const link of links) {
-  link.addEventListener('click', selectLink);
-}
-
-
-    if (color.texture)
-    {
-      swatch.style.backgroundImage = "url(" + color.texture + ")";
-    } else
-    {
-      swatch.style.background = "#" + color.color;
-    }
-
-    swatch.setAttribute('data-key', i);
-    TRAY.append(swatch);
-  }
-}
-
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 
 for (const swatch of swatches) {
   swatch.addEventListener('click', selectSwatch);
