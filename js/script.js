@@ -216,11 +216,23 @@ function buildColors(colors) {
 buildColors(colors);
 
 // Select Option
+function link(colors) {
+    for (let [i, link] of colors.entrues {
+         let swatch = document.createElement('div');
+         swatch.classList.add('tray__swatch');
+         swatch = "url";
+    swatch.setAttribute('data-key', i);
+    TRAY.append(swatch);
+}
+}
+link(colors);
 const options = document.querySelectorAll(".option");
 
 for (const option of options) {
   option.addEventListener('click', selectOption);
 }
+//link!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+const link = document.querySelectorAll(".link");
 
 function selectOption(e) {
   let option = e.target;
@@ -237,7 +249,7 @@ const swatches = document.querySelectorAll(".tray__swatch");
 for (const swatch of swatches) {
   swatch.addEventListener('click', selectSwatch);
 }
-
+    
 function selectSwatch(e) {
   let color = colors[parseInt(e.target.dataset.key)];
   let new_mtl;
