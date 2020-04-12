@@ -194,11 +194,10 @@ function resizeRendererToDisplaySize(renderer) {
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 function button(colors) {
     for (let [i, color] of colors.entries()) {
-        let link = document.querySelectorAll('link');
         link.open= "url";
        
         link.setAttribute('data-key', i);
-    TRAY.append(link);
+        TRAY.append(link);
   }
 }
 button(colors);        
