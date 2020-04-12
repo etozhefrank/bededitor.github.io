@@ -194,7 +194,9 @@ function resizeRendererToDisplaySize(renderer) {
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 function button(colors) {
     for (let [i, color] of colors.entries()) {
-        link.open= "url";
+        link.addEventListener("click", function (evnt) {
+              open('url')
+        }
        
         link.setAttribute('data-key', i);
         TRAY.append(link);
