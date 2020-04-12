@@ -243,7 +243,6 @@ function button(e) {
 function selectSwatch(e) {
   let color = colors[parseInt(e.target.dataset.key)];
   let new_mtl;
-  let link = colors[parseURL(url)];
   if (color.texture) {
 
     let txt = new THREE.TextureLoader().load(color.texture);
