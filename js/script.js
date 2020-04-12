@@ -196,7 +196,7 @@ function button(colors) {
     for (let [i, color] of colors.entries()) {
         link.addEventListener("click", function (evnt) {
               open('url')
-        }
+        })
        
         link.setAttribute('data-key', i);
         TRAY.append(link);
