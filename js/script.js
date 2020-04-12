@@ -13,28 +13,28 @@ var loaded = false;
 const colors = [
 {
     texture: 'resources/brown.png',
-    size: [2,2,2],
-    shininess: 60
+    size: [1,1,1],
+    shininess: 10
 },
 {
     texture: 'resources/lightbrown.png',
-    size: [2,2,2],
-    shininess: 60
+    size: [1,1,1],
+    shininess: 10
 },
 {
     texture: 'resources/pink.png',
-    size: [2,2,2],
-    shininess: 60
+    size: [1,1,1],
+    shininess: 10
 },
 {
     texture: 'resources/red.png',
-    size: [2,2,2],
-    shininess: 60
+    size: [1,1,1],
+    shininess: 10
 },
 {
     texture: 'resources/white.png',
-    size: [2,2,2],
-    shininess: 60
+    size: [1,1,1],
+    shininess: 10
 }];
 
 
