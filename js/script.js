@@ -198,6 +198,7 @@ function resizeRendererToDisplaySize(renderer) {
 function buildColors(colors) {
   for (let [i, color] of colors.entries()) {
     let swatch = document.createElement('div');
+    let swatch = document.createElement('button')
     swatch.classList.add('tray__swatch');
 
     if (color.texture)
@@ -233,16 +234,11 @@ function selectOption(e) {
 
 // Swatches
 const swatches = document.querySelectorAll(".tray__swatch");
-const links = document.querySelectorAll(".tray__swatch");
 
 for (const link of links) {
   link.addEventListener('click', selectLink);
 }
-//BUILD URL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-function buildURL(colors) {
-  for (let [i, link] of colors.entries()) {
-    let link = document.createElement('button');
-    link.classList.add('tray__swatch');
+
 
     if (color.texture)
     {
@@ -258,9 +254,7 @@ function buildURL(colors) {
 }
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-function selectLink(e) {
-  let link = colors[parseInt(e.target.dataset.key)];
-}
+
 
 for (const swatch of swatches) {
   swatch.addEventListener('click', selectSwatch);
