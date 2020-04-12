@@ -40,7 +40,7 @@ const colors = [
     link: '',
 }];
 
-
+console.log(colors['link']);
 
 const BACKGROUND_COLOR = 0xf1f1f1;
 // Init the scene
@@ -235,10 +235,9 @@ function selectOption(e) {
 const swatches = document.querySelectorAll(".tray__swatch");
 
 for (const swatch of swatches) {
-  swatch.addEventListener('click', selectSwatch, button);
+  swatch.addEventListener('click', selectSwatch);
 }
-function button(e) {
-    let link = colors[parseURL(url)];//111111111111111111111111111111111111111111111111111111111
+    
 }
 function selectSwatch(e) {
   let color = colors[parseInt(e.target.dataset.key)];
