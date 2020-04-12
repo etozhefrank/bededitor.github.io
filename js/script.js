@@ -241,7 +241,7 @@ for (const link of links) {
 //BUILD URL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 function buildURL(colors) {
   for (let [i, link] of colors.entries()) {
-    let swatch = document.createElement('button');
+    let link = document.createElement('button');
     link.classList.add('tray__swatch');
 
     if (color.texture)
