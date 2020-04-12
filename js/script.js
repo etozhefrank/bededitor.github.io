@@ -9,32 +9,38 @@ const MODEL_PATH = "models/blenderbed.glb";
 
 var activeOption = 'main';
 var loaded = false;
-
+var l;
+var bedURL ='
 const colors = [
 {
     texture: 'resources/brown.png',
     size: [1,1,1],
-    shininess: 62
+    shininess: 62,
+    l: 1
 },
 {
     texture: 'resources/lightbrown.png',
     size: [1,1,1],
-    shininess: 11
+    shininess: 11,
+    l: 2
 },
 {
     texture: 'resources/pink.png',
     size: [1,1,1],
-    shininess: 01
+    shininess: 01,
+    l: 3
 },
 {
     texture: 'resources/red.png',
     size: [1,1,1],
-    shininess: 11
+    shininess: 11,
+    l: 4
 },
 {
     texture: 'resources/white.png',
     size: [1,1,1],
-    shininess: 11
+    shininess: 11,
+    l = 'https://elderly-neon.glitch.me/'
 }];
 
 
