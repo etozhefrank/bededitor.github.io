@@ -198,8 +198,9 @@ function resizeRendererToDisplaySize(renderer) {
 function buildColors(colors) {
   for (let [i, color] of colors.entries()) {
     let swatch = document.createElement('div');
+    let swatch = document.createElement('button');
     swatch.classList.add('tray__swatch');
-
+    
     if (color.texture)
     {
       swatch.style.backgroundImage = "url(" + color.texture + ")";
@@ -216,20 +217,10 @@ function buildColors(colors) {
 buildColors(colors);
 
 // Select Option
-function link(colors) {
-    for (let [i, link] of colors.entries()) {
-         let swatch = document.createElement('div');
-         swatch.classList.add('tray__swatch');
-         swatch = "url";
-    swatch.setAttribute('data-key', i);
-    TRAY.append(swatch);
-}
-}
-link(colors);
 const options = document.querySelectorAll(".option");
 
 for (const option of options) {
-  option.addEventListener('click', selectOption);
+  option.addEventListener('click', selectOption );
 }
 //link!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -246,9 +237,10 @@ function selectOption(e) {
 const swatches = document.querySelectorAll(".tray__swatch");
 
 for (const swatch of swatches) {
-  swatch.addEventListener('click', selectSwatch);
+  swatch.addEventListener('click', selectSwatch, button);
 }
-    
+
+
 function selectSwatch(e) {
   let color = colors[parseInt(e.target.dataset.key)];
   let new_mtl;
