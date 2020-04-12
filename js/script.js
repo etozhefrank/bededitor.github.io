@@ -13,7 +13,7 @@ const colors = [
     texture: 'resources/brown.png',
     size: [1,1,1],
     shininess: 61,
-    l1: 'https://elderly-neon.glitch.me/'
+    l: 'https://elderly-neon.glitch.me/'
 },
 {
     texture: 'resources/lightbrown.png',
@@ -42,7 +42,7 @@ const colors = [
 
 let out ='';
 for (let key in colors){
-    out += i[key];
+    out += l[key];
 }
 document.querySelector('.out').innerHTML = out;
 
