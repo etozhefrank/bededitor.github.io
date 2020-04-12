@@ -18,13 +18,13 @@ const colors = [
 {
     texture: 'resources/lightbrown.png',
     size: [1,1,1],
-    shininess: 10,
+    shininess: 11,
     link: '',
 },
 {
     texture: 'resources/pink.png',
     size: [1,1,1],
-    shininess: 0,
+    shininess: 01,
     link: '',
 },
 {
