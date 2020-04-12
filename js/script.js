@@ -232,7 +232,6 @@ for (const option of options) {
   option.addEventListener('click', selectOption);
 }
 //link!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-const link = document.querySelectorAll(".link");
 
 function selectOption(e) {
   let option = e.target;
@@ -253,7 +252,6 @@ for (const swatch of swatches) {
 function selectSwatch(e) {
   let color = colors[parseInt(e.target.dataset.key)];
   let new_mtl;
-  let link;
   if (color.texture) {
     
     let txt = new THREE.TextureLoader().load(color.texture);
