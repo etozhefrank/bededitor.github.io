@@ -217,12 +217,13 @@ buildColors(colors);
 
 // Select Option
 function link(colors) {
-    for (let [i, link] of colors.entrues {
+    for (let [i, link] of colors.entries {
          let swatch = document.createElement('div');
          swatch.classList.add('tray__swatch');
          swatch = "url";
     swatch.setAttribute('data-key', i);
     TRAY.append(swatch);
+}
 }
 link(colors);
 const options = document.querySelectorAll(".option");
