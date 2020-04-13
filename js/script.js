@@ -222,7 +222,6 @@ for (const link of links) {
 
 function selectLink() {
     let link = colors.link;
-    //activeURL = e.target.dataset.link;
 }
 // Select Option
 const options = document.querySelectorAll(".option");
