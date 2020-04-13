@@ -4,7 +4,6 @@ const TRAY = document.getElementById('js-tray-slide');
 const DRAG_NOTICE = document.getElementById('js-drag-notice');
 
 var theModel;
-var link;
 const MODEL_PATH = "models/blenderbed.glb";
 var activeOption = 'main';
 var loaded = false;
