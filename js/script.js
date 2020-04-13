@@ -220,7 +220,7 @@ for (const link of links) {
     link.addEventListener('click', selectLink);
 }
 
-function selectLink(e) {
+function selectLink() {
     let link = colors.link;
     activeURL = e.target.dataset.link;
 }
