@@ -221,7 +221,11 @@ for (const link of links) {
 }
 
 function selectLink() {
-    let link = colors.link;
+    let link = colors[parseURL(e.target.dataset.key)];
+    for (const otherLink of links) {
+        otherLink.classList.remove('--is-active');
+    }
+    link.classList.add('--is-active');
 }
 // Select Option
 const options = document.querySelectorAll(".option");
