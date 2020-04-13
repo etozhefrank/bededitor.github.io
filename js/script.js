@@ -6,7 +6,7 @@ const DRAG_NOTICE = document.getElementById('js-drag-notice');
 var theModel;
 const MODEL_PATH = "models/blenderbed.glb";
 var activeOption = 'main';
-var activeURL;
+var activeURL = 'https://zippy-passenger.glitch.me/'
 var loaded = false;
 const colors = [
 {
@@ -221,12 +221,8 @@ for (const link of links) {
 }
 
 function selectLink(e) {
-    let link = e.target;
+    let link = colors.link;
     activeURL = e.target.dataset.link;
-    for (const otherURL of links) {
-        otherLink.classList.remove('--is-active');
-    }
-    link.classList.add('--is-active');
 }
 // Select Option
 const options = document.querySelectorAll(".option");
@@ -253,7 +249,6 @@ for (const swatch of swatches) {
 
 function selectSwatch(e) {
   let color = colors[parseInt(e.target.dataset.key)];
-  let link;
   let new_mtl;
 
   if (color.texture) {
