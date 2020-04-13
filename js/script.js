@@ -69,9 +69,20 @@ camera.position.x = 0;
 const INITIAL_MTL = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
 
 const INITIAL_MAP = [
-{ childID: "main", mtl: INITIAL_MTL },
-{ childID: "matras", mtl: INITIAL_MTL }];
+{ childID: "main", mtl: INITIAL_MTL }];
 
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+//const INITIAL_LINK = [
+   // { link: INITIAL_URL }
+//];
+//UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+//function (open) {
+   // theLink = 'link';
+//}
+//SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+//for (let object of INITIAL_URL){
+   // initLink(theLink, object.childID, object.link);
+//}
 
 // Init the object loader
 var loader = new THREE.GLTFLoader();
@@ -104,8 +115,6 @@ loader.load(MODEL_PATH, function (gltf) {
   // Remove the loader
   LOADER.remove();
 
-}, undefined, function (error) {
-  console.error(error);
 });
 
 // Function - Add the textures to the models
@@ -198,7 +207,6 @@ function buildColors(colors) {
   for (let [i, color] of colors.entries()) {
     let swatch = document.createElement('div');
     swatch.classList.add('tray__swatch');
-
     if (color.texture)
     {
       swatch.style.backgroundImage = "url(" + color.texture + ")";
@@ -236,23 +244,22 @@ const swatches = document.querySelectorAll(".tray__swatch");
 for (const swatch of swatches) {
   swatch.addEventListener('click', selectSwatch);
 }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function selectSwatch(e) {
   let color = colors[parseInt(e.target.dataset.key)];
   let new_mtl;
-
+  let ev = colors[parseInt(e.target.dataset.key)];
   if (color.texture) {
-
+    
     let txt = new THREE.TextureLoader().load(color.texture);
-
     txt.repeat.set(color.size[0], color.size[1], color.size[2]);
     txt.wrapS = THREE.RepeatWrapping;
     txt.wrapT = THREE.RepeatWrapping;
 
+
     new_mtl = new THREE.MeshPhongMaterial({
       map: txt,
       shininess: color.shininess ? color.shininess : 10 });
-
   } else
 
   {
@@ -260,11 +267,15 @@ function selectSwatch(e) {
       color: parseInt('0x' + color.color),
       shininess: color.shininess ? color.shininess : 10 });
 
-
-  }
-
+  } 
   setMaterial(theModel, activeOption, new_mtl);
 }
+
+
+
+function setLink() {
+              window.open(ev);
+            }
 
 function setMaterial(parent, type, mtl) {
   parent.traverse(o => {
@@ -287,7 +298,9 @@ function initialRotation() {
     loaded = true;
   }
 }
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+    
 var slider = document.getElementById('js-tray'),sliderItems = document.getElementById('js-tray-slide'),difference;
 
 function slide(wrapper, items) {
