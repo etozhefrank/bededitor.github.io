@@ -36,7 +36,7 @@ const colors = [
 {
     texture: 'resources/white.png',
     size: [1,1,1],
-    shininess: 11;
+    shininess: 11,
     link: '',
 }];
 
