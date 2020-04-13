@@ -6,6 +6,7 @@ const DRAG_NOTICE = document.getElementById('js-drag-notice');
 var theModel;
 const MODEL_PATH = "models/blenderbed.glb";
 var activeOption = 'main';
+var activeURL;
 var loaded = false;
 const colors = [
 {
@@ -212,7 +213,21 @@ function buildColors(colors) {
 }
 
 buildColors(colors);
+//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+const link = document.querySelectorAll(".link");
 
+for (const link of links) {
+    link.addEventListener('click', selectLink);
+}
+
+function selectLink(e) {
+    let link = e.target;
+    activeURL = e.target.dataset.link;
+    for (const otherURL of links) {
+        otherLink.classList.remove('--is-active');
+    }
+    link.classList.add('--is-active');
+}
 // Select Option
 const options = document.querySelectorAll(".option");
 
