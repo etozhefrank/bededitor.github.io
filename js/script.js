@@ -214,7 +214,7 @@ function buildColors(colors) {
 
 buildColors(colors);
 //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-const link = document.querySelectorAll(".link");
+const links = document.querySelectorAll(".link");
 
 for (const link of links) {
     link.addEventListener('click', selectLink);
