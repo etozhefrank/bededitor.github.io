@@ -190,17 +190,6 @@ function resizeRendererToDisplaySize(renderer) {
   }
   return needResize;
 }
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-function button(colors) {
-    for (let [i, color] of colors.entries()) {
-        let link = document.querySelector('#link');
-        link.setAttribute('link', i);
-        TRAY.append(link);
-  }
-}
-button(colors);        
-    
-
 
 // Function - Build Colors
 
@@ -216,7 +205,7 @@ function buildColors(colors) {
     {
       swatch.style.background = "#" + color.color;
     }
-    
+
     swatch.setAttribute('data-key', i);
     TRAY.append(swatch);
   }
@@ -246,11 +235,12 @@ const swatches = document.querySelectorAll(".tray__swatch");
 for (const swatch of swatches) {
   swatch.addEventListener('click', selectSwatch);
 }
-    
 
 function selectSwatch(e) {
   let color = colors[parseInt(e.target.dataset.key)];
+  let link;
   let new_mtl;
+
   if (color.texture) {
 
     let txt = new THREE.TextureLoader().load(color.texture);
@@ -258,7 +248,8 @@ function selectSwatch(e) {
     txt.repeat.set(color.size[0], color.size[1], color.size[2]);
     txt.wrapS = THREE.RepeatWrapping;
     txt.wrapT = THREE.RepeatWrapping;
-
+    
+    link = 'url';
     new_mtl = new THREE.MeshPhongMaterial({
       map: txt,
       shininess: color.shininess ? color.shininess : 10 });
@@ -364,4 +355,4 @@ function slide(wrapper, items) {
 
 }
 
-slide(slider, sliderItems);
+slide(slider, sliderItems);  
