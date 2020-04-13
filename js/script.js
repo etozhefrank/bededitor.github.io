@@ -214,19 +214,6 @@ function buildColors(colors) {
 
 buildColors(colors);
 //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-const links = document.querySelectorAll(".link");
-
-for (const link of links) {
-    link.addEventListener('click', selectLink);
-}
-
-function selectLink() {
-    let link = colors[parseURL(e.target.dataset.key)];
-    for (const otherLink of links) {
-        otherLink.classList.remove('--is-active');
-    }
-    link.classList.add('--is-active');
-}
 // Select Option
 const options = document.querySelectorAll(".option");
 
@@ -247,7 +234,7 @@ function selectOption(e) {
 const swatches = document.querySelectorAll(".tray__swatch");
 
 for (const swatch of swatches) {
-  swatch.addEventListener('click', selectSwatch);
+  swatch.addEventListener('click', selectSwatch, selectLink);
 }
 
 function selectSwatch(e) {
@@ -279,7 +266,20 @@ function selectSwatch(e) {
 
   setMaterial(theModel, activeOption, new_mtl);
 }
+//BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+const links = document.querySelectorAll(".link");
 
+for (const link of links) {
+    link.addEventListener('click', selectLink);
+}
+
+function selectLink() {
+    let link = colors[parseURL(e.target.dataset.key)];
+    for (const otherLink of links) {
+        otherLink.classList.remove('--is-active');
+    }
+    link.classList.add('--is-active');
+}
 function setMaterial(parent, type, mtl) {
   parent.traverse(o => {
     if (o.isMesh && o.nameID != null) {
