@@ -213,7 +213,7 @@ function buildColors(colors) {
 }
 
 buildColors(colors);
-//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
 // Select Option
 const options = document.querySelectorAll(".option");
 
@@ -234,7 +234,7 @@ function selectOption(e) {
 const swatches = document.querySelectorAll(".tray__swatch");
 
 for (const swatch of swatches) {
-  swatch.addEventListener('click', selectSwatch, selectLink);
+  swatch.addEventListener('click', selectSwatch);
 }
 
 function selectSwatch(e) {
@@ -248,8 +248,7 @@ function selectSwatch(e) {
     txt.repeat.set(color.size[0], color.size[1], color.size[2]);
     txt.wrapS = THREE.RepeatWrapping;
     txt.wrapT = THREE.RepeatWrapping;
-    
-    link = 'url';
+
     new_mtl = new THREE.MeshPhongMaterial({
       map: txt,
       shininess: color.shininess ? color.shininess : 10 });
@@ -266,20 +265,7 @@ function selectSwatch(e) {
 
   setMaterial(theModel, activeOption, new_mtl);
 }
-//BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
-const links = document.querySelectorAll(".link");
 
-for (const link of links) {
-    link.addEventListener('click', selectLink);
-}
-
-function selectLink() {
-    let link = colors[parseURL(e.target.dataset.key)];
-    for (const otherLink of links) {
-        otherLink.classList.remove('--is-active');
-    }
-    link.classList.add('--is-active');
-}
 function setMaterial(parent, type, mtl) {
   parent.traverse(o => {
     if (o.isMesh && o.nameID != null) {
@@ -368,4 +354,4 @@ function slide(wrapper, items) {
 
 }
 
-slide(slider, sliderItems);  
+slide(slider, sliderItems);
