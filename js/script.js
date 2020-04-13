@@ -195,7 +195,6 @@ function resizeRendererToDisplaySize(renderer) {
 function button(colors) {
     for (let [i, color] of colors.entries()) {
         let link = document.querySelector('#link');
-        link.classList.add('tray__swatch');
         link.setAttribute('link', i);
         TRAY.append(link);
   }
