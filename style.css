@@ -35,6 +35,13 @@ body {
   left: 0;
 }
 
+.svg {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  height: 35px;
+  width: 35px;
+}
 .ARbtn {
   position: absolute;
   top: 85%;
@@ -45,7 +52,6 @@ body {
   width: 50px;
   border-radius: 50px;
   padding: 30px;
-  
 }
 .controls {
   position: absolute;
