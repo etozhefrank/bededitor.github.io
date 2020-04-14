@@ -36,9 +36,15 @@ body {
 }
 
 .b1 {
-  padding: 0 1em;
-  display: flex;
-  justify-content: flex-end;
+  position: absolute;
+  down: 20%;
+  right: 20%;
+  transform:  translate(-50%, -50%);
+  background: #2f3640;
+  height: 20px;
+  border-radius: 20px;
+  padding: 10px;
+  
 }
 .controls {
   position: absolute;
