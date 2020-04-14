@@ -37,13 +37,13 @@ body {
 
 .ARbtn {
   position: absolute;
-  down: 20%;
-  right: 20%;
+  down: 6%;
+  right: 6%;
   transform:  translate(-50%, -50%);
   background: #2f3640;
   height: 20px;
   border-radius: 20px;
-  padding: 10px;
+  padding: 0px;
   
 }
 .controls {
