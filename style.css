@@ -44,7 +44,7 @@ body {
 }
 .ARbtn {
   position: absolute;
-  top: 85%;
+  top: 8%;
   right: 5%;
   transform:  translate(-50%, -50%);
   background: #2f3640;
