@@ -38,11 +38,11 @@ body {
 .ARbtn {
   position: absolute;
   top: 85%;
-  right: 6%;
+  right: 5%;
   transform:  translate(-50%, -50%);
   background: #2f3640;
   height: 50px;
-    width: 50px;
+  width: 50px;
   border-radius: 50px;
   padding: 30px;
   
