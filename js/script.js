@@ -19,25 +19,25 @@ const colors = [
     texture: 'resources/lightbrown.png',
     size: [1,1,1],
     shininess: 10,
-    link: '',
+    link: 'https://checker-equal-building.glitch.me/',
 },
 {
     texture: 'resources/pink.png',
     size: [1,1,1],
     shininess: 0,
-    link: '',
+    link: 'https://inexpensive-wind-red.glitch.me/',
 },
 {
     texture: 'resources/red.png',
     size: [1,1,1],
     shininess: 11,
-    link: '',
+    link: 'https://fantastic-trusted-mat.glitch.me/',
 },
 {
     texture: 'resources/white.png',
     size: [1,1,1],
     shininess: 11,
-    link: '',
+    link: 'https://substantial-polarized-manchego.glitch.me/',
 }];
 
 
