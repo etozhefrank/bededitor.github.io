@@ -248,7 +248,11 @@ for (const swatch of swatches) {
 function selectSwatch(e) {
   let color = colors[parseInt(e.target.dataset.key)];
   let new_mtl;
-  let ev = colors[parseInt(e.target.dataset.key)];
+  let ev = color.link 
+      document.querySelector('#b1').onclick = function () {
+              window.open(ev);
+            }
+  
   if (color.texture) {
     
     let txt = new THREE.TextureLoader().load(color.texture);
@@ -273,7 +277,7 @@ function selectSwatch(e) {
 
 
 
-function setLink() {
+document.querySelector('#b1').onclick = function () {
               window.open(ev);
             }
 
