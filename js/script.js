@@ -245,6 +245,34 @@ for (const swatch of swatches) {
   swatch.addEventListener('click', selectSwatch);
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const toggleModal = () => {
+    document.querySelector('.modal')
+    .classList.toggle('modal--hidden')
+}
+
+const removeModal = () => {
+    document.querySelector('.modal')
+    .classList.remove('modal--hidden')
+}
+
+const toggleInfoar =() => {
+    document.querySelector('.ar')
+    .classList.toggle('ar--hidden')
+}
+
+const removeInfoar = () => {
+    document.querySelector('.ar')
+    .classList.remove('ar--hidden')
+}
+const toggleCvet = () => {
+    document.querySelector('.cvet')
+    .classList.toggle('cvet--hidden')
+}
+
+const removeCvet = () => {
+    document.querySelector('.cvet')
+    .classList.remove('cvet--hidden')
+}
 function selectSwatch(e) {
   let color = colors[parseInt(e.target.dataset.key)];
   let new_mtl;
@@ -252,6 +280,12 @@ function selectSwatch(e) {
       document.querySelector('#b1').onclick = function () {
               window.open(ev);
             }
+    document.querySelector('#js-tray').addEventListener('click', toggleModal);
+      document.querySelector('#js-tray').addEventListener('click', removeModal);
+      document.querySelector('#js-tray').addEventListener('click', toggleInfoar);
+      document.querySelector('#js-tray').addEventListener('click', removeInfoar);
+      document.querySelector('#js-tray').addEventListener('click', toggleCvet);
+      document.querySelector('#js-tray').addEventListener('click', removeCvet);
   
   if (color.texture) {
     
