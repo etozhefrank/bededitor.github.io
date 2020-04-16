@@ -12,7 +12,7 @@ const colors = [
 {
     texture: 'resources/brown.png',
     size: [1,1,1],
-    shininess: 11;
+    shininess: 11,
     link: 'https://elderly-neon.glitch.me/',
 },
 {
