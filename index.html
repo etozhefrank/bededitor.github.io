@@ -66,6 +66,11 @@
     </div>
     <!-- Just a quick notice to the user that it can be interacted with -->
     <span class="drag-notice" id="js-drag-notice">Drag to rotate 360&#176;</span>
+     <a class="modal modal--hidden" id="pop-up">
+    <button class="ARbtn" id="b1" src="resources/AR.svg">
+        <strong> ОТКРЫТЬ ПРОСМОТР В AR</strong>
+    </button>
+    </a>
     <div class="ar ar--hidden">
         <p>Нажмите на кнопку для просмотра в Вашей комнате</p>
     </div>
@@ -84,9 +89,6 @@
             <div id="js-tray-slide" class="tray__slide"></div>
         </div>
     </div>
-     <button class="ARbtn" id="b1">
-           <img class="svg" src="resources/AR.svg" alt=""/>
-     </button>
     <script src="js/three.js"></script>
     <script src="js/OrbitControls.js"></script>
     <script src="js/GLTFLoader.js"></script>
