@@ -64,6 +64,7 @@ document.body.appendChild(renderer.domElement);
 var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.z = cameraFar;
 camera.position.x = 0;
+camera.position.y = -6;
 
 // Initial material
 const INITIAL_MTL = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
@@ -98,11 +99,12 @@ loader.load(MODEL_PATH, function (gltf) {
   });
 
   // Set the models initial scale   
-  theModel.scale.set(2, 2, 2);
-  theModel.rotation.y = Math.PI;
+  theModel.scale.set(1.5, 1.5, 1.5);
+  theModel.rotation.y = Math.PI +90;
 
   // Offset the y position a bit
   theModel.position.y = -1;
+    
 
   // Set initial textures
   for (let object of INITIAL_MAP) {
@@ -116,7 +118,7 @@ loader.load(MODEL_PATH, function (gltf) {
   LOADER.remove();
 
 });
-
+ 
 // Function - Add the textures to the models
 function initColor(parent, type, mtl) {
   parent.traverse(o => {
@@ -273,22 +275,21 @@ const removeCvet = () => {
     document.querySelector('.cvet')
     .classList.remove('cvet--hidden')
 }
+
 function selectSwatch(e) {
   let color = colors[parseInt(e.target.dataset.key)];
   let new_mtl;
   let ev = color.link 
       document.querySelector('#b1').onclick = function () {
               window.open(ev);
-            }
-    document.querySelector('#js-tray').addEventListener('click', toggleModal);
+            };
+      document.querySelector('#js-tray').addEventListener('click', toggleModal);
       document.querySelector('#js-tray').addEventListener('click', removeModal);
       document.querySelector('#js-tray').addEventListener('click', toggleInfoar);
       document.querySelector('#js-tray').addEventListener('click', removeInfoar);
       document.querySelector('#js-tray').addEventListener('click', toggleCvet);
       document.querySelector('#js-tray').addEventListener('click', removeCvet);
-  
-  if (color.texture) {
-    
+      if (color.texture) {
     let txt = new THREE.TextureLoader().load(color.texture);
     txt.repeat.set(color.size[0], color.size[1], color.size[2]);
     txt.wrapS = THREE.RepeatWrapping;
