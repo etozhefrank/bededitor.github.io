@@ -42,6 +42,26 @@ body {
   height: 25px;
   width: 25px;
 }
+.ar {
+  position: fixed;
+  top: 12%;
+    color: #2f3640;
+    font-size: 15px;
+}
+.cvet--hidden {
+    position: fixed;
+    top: 12%;
+    color: #2f3640;
+    font-size: 22px;
+}
+.cvet {
+    display: none;
+    
+}
+
+.ar--hidden {
+    display: none;
+}
 .ARbtn {
   position: absolute;
   top: 10%;
