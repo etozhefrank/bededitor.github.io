@@ -159,15 +159,13 @@ body {
     color: #2f3640;
     font-size: 15px;
 }
-.cvet--hidden {
-    position: fixed;
-    top: 15%;
-    color: #2f3640;
-    font-size: 22px;
-}
 .cvet {
     display: none;
-    
+}
+.cvet--hidden {
+        font-size: 24px;
+        color: #2f3640;
+        top: 8%;
 }
 
 .ar--hidden {
@@ -196,8 +194,10 @@ body {
     padding: 0 1em 1em 0;
   }
   .cvet--hidden {
-    font-size: 12px;
-  }
+        font-size: 24px;
+        color: #2f3640;
+        top: 8%;
+}
   .info__color {
     display: fixed;
     top: 5%;
@@ -217,6 +217,12 @@ body {
     align-items: center;
     padding: 0 1em 1em;
   }
+  
+  .cvet--hidden {
+        font-size: 24px;
+        color: #2f3640;
+        top: 8%;
+}
     
   .info__color {
     margin-bottom: 1em;
@@ -238,6 +244,12 @@ body {
     width: 45px;
     display: flex;
   }
+
+.cvet--hidden {
+        font-size: 24px;
+        color: #2f3640;
+        top: 8%;
+}
   .option.--is-active {
     border-right: 2px solid red;
     width: 47px;
