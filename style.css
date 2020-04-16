@@ -195,9 +195,15 @@ body {
   .info {
     padding: 0 1em 1em 0;
   }
+  .cvet--hidden {
+    font-size: 12px;
+  }
   .info__color {
     display: fixed;
     top: 5%;
+  }
+  .ar {
+    font-size: 10px;
   }
   .info__message p {
     margin: 0;
