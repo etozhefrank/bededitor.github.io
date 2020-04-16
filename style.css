@@ -35,6 +35,37 @@ body {
   left: 0;
 }
 
+.modal--hidden {
+    display: none;
+}
+.modal {
+    position: absolute;
+    align-content: center;
+    top: 30px;  
+}
+
+.ARbtn {
+  background: #2f3640;
+  height: 60px;
+  width: 300px;
+  border-radius: 30px;
+  padding: 05px;
+  transition: all .5s ease;
+  color: #fff;
+  font-size: 18px;
+  justify-content: center;
+  
+}
+ 
+.modal {
+        animation: drop .45s ease forwards;   
+}
+@keyframes drop{
+    0%{transform: translateY(-40px)}
+    70%{ transform: translateY(10px)}
+    100%{transform: translateY(0px)}
+}
+
 .svg {
   position: absolute;
   top: 14px;
