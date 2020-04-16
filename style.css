@@ -155,13 +155,13 @@ body {
 
 .ar {
   position: fixed;
-  top: 13%;
+  top: 15%;
     color: #2f3640;
     font-size: 15px;
 }
 .cvet--hidden {
     position: fixed;
-    top: 13%;
+    top: 15%;
     color: #2f3640;
     font-size: 22px;
 }
