@@ -155,6 +155,8 @@ body {
 }
 .ar {
    position: fixed;
+   justify-content: center;
+   align-content: center;
    top: 12%;
    color: #2f3640;
    font-size: 15px;
