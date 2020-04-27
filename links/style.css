@@ -1,0 +1,14 @@
+.button {
+background: light-gray; 
+padding: 6px; 
+border-radius: 10px; 
+color: black; 
+border-color: black; 
+border-size: 1px;
+position: absolute; 
+bottom: 16px; 
+right: 16px; 
+height: 30px; 
+weight: 160px; 
+align-content: center;
+}
