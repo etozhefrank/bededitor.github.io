@@ -13,32 +13,36 @@ const colors = [
     texture: 'resources/brown.png',
     size: [1,1,1],
     shininess: 10,
-    linkios: 'android/index.html',
+    linkios: 'android/index1.html',
     linkandroid: 'links/1.html',
 },
 {
     texture: 'resources/lightbrown.png',
     size: [1,1,1],
     shininess: 10,
-    linkios: 'links/2.html',
+    linkios: 'android/index2.html',
+    linkandroid: 'links/2.html',
 },
 {
     texture: 'resources/pink.png',
     size: [1,1,1],
     shininess: 0,
-    linkios: 'links/3.html',
+    linkios: 'android/index3.html',
+    linkandroid: 'links/3.html',
 },
 {
     texture: 'resources/red.png',
     size: [1,1,1],
     shininess: 11,
-    linkios: 'links/4.html',
+    linkios: 'android/index4.html',
+    linkandroid: 'links/4.html',
 },
 {
     texture: 'resources/white.png',
     size: [1,1,1],
     shininess: 11,
-    linkios: 'links/5.html',
+    linkios: 'android/index5.html',
+    linkandroid: 'links/5.html',
 }];
 
 
