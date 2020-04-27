@@ -304,14 +304,18 @@ function selectSwatch(e) {
   let new_mtl;
     ///
   if(!isMobile.Android()){
-      let ev = color.linkandroid;
-  }
-  if(!isMobile.iOS()){  
-       let ev = color.linkios;
-  }
+      let ev = color.linkandroid
       document.querySelector('#b1').onclick = function () {
               window.open(ev);
             };
+  }
+  if(!isMobile.iOS()){  
+       let ev = color.linkios;
+      document.querySelector('#b1').onclick = function () {
+              window.open(ev);
+            };
+  }
+
       document.querySelector('#js-tray').addEventListener('click', toggleModal);
       document.querySelector('#js-tray').addEventListener('click', removeModal);
       document.querySelector('#js-tray').addEventListener('click', toggleInfoar);
