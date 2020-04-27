@@ -13,8 +13,8 @@ const colors = [
     texture: 'resources/brown.png',
     size: [1,1,1],
     shininess: 10,
-    linkios: 'links/1.html',
-    linkandroid: 'android/index.html',
+    linkios: 'android/index.html',
+    linkandroid: 'links/1.html',
 },
 {
     texture: 'resources/lightbrown.png',
