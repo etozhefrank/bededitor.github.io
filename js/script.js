@@ -305,10 +305,10 @@ function selectSwatch(e) {
   if(!isMobile.iOS()){
        alert('not-ios-hide-download-button');
        let ev = color.linkios;
-  }
+  },
   if(!isMobile.Android()){
       let ev = color.linkandroid;
-  }
+  },
       document.querySelector('#b1').onclick = function () {
               window.open(ev);
             };
