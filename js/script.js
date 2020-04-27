@@ -13,31 +13,32 @@ const colors = [
     texture: 'resources/brown.png',
     size: [1,1,1],
     shininess: 10,
-    link: 'links/1.html',
+    linkios: 'links/1.html',
+    linkandroid: 'android/index.html',
 },
 {
     texture: 'resources/lightbrown.png',
     size: [1,1,1],
     shininess: 10,
-    link: 'links/2.html',
+    linkios: 'links/2.html',
 },
 {
     texture: 'resources/pink.png',
     size: [1,1,1],
     shininess: 0,
-    link: 'links/3.html',
+    linkios: 'links/3.html',
 },
 {
     texture: 'resources/red.png',
     size: [1,1,1],
     shininess: 11,
-    link: 'links/4.html',
+    linkios: 'links/4.html',
 },
 {
     texture: 'resources/white.png',
     size: [1,1,1],
     shininess: 11,
-    link: 'links/5.html',
+    linkios: 'links/5.html',
 }];
 
 
@@ -276,10 +277,38 @@ const removeCvet = () => {
     .classList.remove('cvet--hidden')
 }
 
+//DETECTING PLATFORM !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
 function selectSwatch(e) {
   let color = colors[parseInt(e.target.dataset.key)];
   let new_mtl;
-  let ev = color.link 
+    ///
+  if(!isMobile.iOS()){
+       alert('not-ios-hide-download-button');
+       let ev = color.linkios;
+  }
+  if(!isMobile.Android()){
+      let ev = color.linkandroid;
+  }
       document.querySelector('#b1').onclick = function () {
               window.open(ev);
             };
