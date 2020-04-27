@@ -42,6 +42,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       </details>
     </header>
     <script src='https://cdn.jsdelivr.net/npm/webxr-polyfill@latest/build/webxr-polyfill.js'></script>
+    <script src='js/GLTFLoader.js'></script>
     <script type="module">
       import {WebXRButton} from './js/util/webxr-button.js';
       import {Scene} from './js/render/scenes/scene.js';
@@ -64,13 +65,19 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       let renderer = null;
       let scene = new Scene();
       scene.enableStats(false);
-
+      
+      var loader = new THREE.GLTFLoader();
+      loader.load('brwn.glb', function (gltf) {
+        mesh = gltf.scene;
+        mesh.scale.set(2, 2, 2);
+      });
+  
       let arObject = new Node();
       arObject.visible = false;
       scene.addNode(arObject);
 
       let flower = new Gltf2Node({url: 'links/beds/brwn.glb'});
-      arObject.addNode(flower);
+      arObject.addNode(mesh);
 
       let reticle = new Gltf2Node({url: 'media/gltf/reticle/reticle.gltf'});
       reticle.visible = false;
