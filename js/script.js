@@ -302,13 +302,10 @@ function selectSwatch(e) {
   let color = colors[parseInt(e.target.dataset.key)];
   let new_mtl;
     ///
-  if(!isMobile.iOS()){
-       alert('not-ios-hide-download-button');
-       let ev = color.linkios;
-  },
+  
   if(!isMobile.Android()){
       let ev = color.linkandroid;
-  },
+  } else { let ev = color.linkios; }
       document.querySelector('#b1').onclick = function () {
               window.open(ev);
             };
