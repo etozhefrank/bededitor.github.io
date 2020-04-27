@@ -298,14 +298,18 @@ var isMobile = {
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
 };
+    if(!isMobile.Android()){
+      let ev = color.linkandroid;
+}
+    if(!isMobile.iOS()){  
+       let ev = color.linkios;
+}
+
 function selectSwatch(e) {
   let color = colors[parseInt(e.target.dataset.key)];
   let new_mtl;
     ///
   
-  if(!isMobile.Android()){
-      let ev = color.linkandroid;
-  } else { let ev = color.linkios; }
       document.querySelector('#b1').onclick = function () {
               window.open(ev);
             };
