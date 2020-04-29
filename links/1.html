@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" href="/style.css" />
 
+    <script src="/script.js" defer></script>
   </head>
   <body>
     <div>
@@ -23,12 +24,8 @@
           height: 100%;
         }
       </style>
-      <model-viewer position="0 0 0" src="beds/pot3.glb"
-      ar ar-scale="auto" camera-controls alt="House" ios-src="beds/BROWN2.usdz" magic-leap unstable-webxr>
-        <button slot="ar-button" style="background: light-gray; padding: 6px; border-radius: 10px; color: black; border-color: black; border-size: 1px;
-        position: absolute; bottom: 16px; right: 16px; height: 30px; weight: 160px; align-content: center;" >
-          👋 Посмотреть в комнате
-      </button>
+      <model-viewer position="0 0 0" src="beds/BROWN.glb" ar ar-modes="webxr"
+      ar-scale="auto" camera-controls alt="House" ios-src="https://cdn.glitch.com/de1701a2-a7d0-4b00-86a5-966f72dcd6bb%2FBROWN2.usdz?v=1587129086015" unstable-webxr>
       </model-viewer>
     </div>
   </body>
