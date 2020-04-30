@@ -1,0 +1,32 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"
+    ></script>
+
+    <link rel="stylesheet" href="/style.css" />
+
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <style>
+        model-viewer {
+          width: 100%;
+          height: 100%;
+        }
+      </style>
+      <model-viewer position="0 0 0" src="glbs/LIGHTBRPWN.glb" ar ar-modes="webxr"
+      ar-scale="auto" camera-controls alt="House" ios-src="glbs/LIGHTBROWN2.usdz" unstable-webxr>
+      </model-viewer>
+    </div>
+  </body>
+</html>
