@@ -284,7 +284,7 @@ function selectSwatch(e) {
   let color = colors[parseInt(e.target.dataset.key)];
   let new_mtl;
     ///
-  let ev = color.linkios;
+  let ev = color.link;
       document.querySelector('#b1').onclick = function () {
               window.open(ev);
             };
